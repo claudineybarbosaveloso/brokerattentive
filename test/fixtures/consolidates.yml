@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  name: MyString
+  registration: 1
+  series: 1
+  proposal: 1
+  code_beneficiary: MyString
+  plan: 1
+  number_quota: 1
+  value_contribution: 9.99
+  commission_percentage: 9.99
+  commission_value: 9.99
+  period_initial: 2013-03-06 13:46:27
+  period_final: 2013-03-06 13:46:27
+
+two:
+  user: 
+  name: MyString
+  registration: 1
+  series: 1
+  proposal: 1
+  code_beneficiary: MyString
+  plan: 1
+  number_quota: 1
+  value_contribution: 9.99
+  commission_percentage: 9.99
+  commission_value: 9.99
+  period_initial: 2013-03-06 13:46:27
+  period_final: 2013-03-06 13:46:27

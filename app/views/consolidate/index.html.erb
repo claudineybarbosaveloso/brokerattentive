@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">     
+		<div class="light-content">
+		  <h4>Selecione um item para a busca</h4> 
+		  <%= link_to "Lista" %>
+		  <%= link_to "Consolidar" %>
+		</div>
+    <div class="light-content">                                         
+      <h3>Consolidação</h3> 
+			<table class="table table-striped">
+			    <tr>
+				    <th>Mês</th>
+				    <th>Ano</th>
+			    </tr>
+			    <% @value_total = 0 %>
+					<% @consolidates.each do |consolidate| %>    
+						<tr>
+						  <td><%= consolidate.month %></td>
+						  <td><%= consolidate.year %></td>
+						</tr> 
+					<% end %>	
+			</table>
+			</table>  
+    </div>  	
+  </div>	
+</div>

@@ -1,0 +1,836 @@
+#encoding: utf-8
+pt-BR:
+  title-home: "Corretor Atento"
+  
+  login:
+    open: "Entrar"
+    
+  navigation:
+    characteristics: "Caracteristicas"
+    plans: "Planos"
+    support: "Suporte"
+    about: "Sobre"
+    contacts: "Contatos"    
+    import: "Importação" 
+    consolidate: "Consolidar"
+    dashboard: "Dashboard"
+    exit: "Sair"
+    
+    menu:
+      commission_customers: "Comissão sobre carteira"
+      commission_first_contribution: "Comissão sobre 1a contribuição"
+      list_users: "Lista de usuários"
+      profile: "Editar perfil"
+      upgrade_billing: "Atualizar de planos"  
+      
+    listing:
+      show: "Exibir"
+      edit: "Editar"
+      destroy: "Apagar"  
+      upgrade_billing: "Atualizar de planos"
+                       
+  activerecord:
+    errors:
+      models:
+        project:
+          attributes:
+            end_date:
+              after: "não deve ser inferior a data de inicio."
+      template:
+        header:
+          one: "Não foi possível gravar {{model}}: 1 erro"
+          other: "Não foi possível gravar {{model}}: {{count}} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      messages:
+        inclusion: "não está incluído na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não está de acordo com a confirmação"
+        accepted: "deve ser aceito"
+        empty: "não pode ficar vazio"
+        blank: "não pode ficar em branco."
+        too_long: "é muito longo (máximo: {{count}} caracteres)"
+        too_short: "é muito curto (mínimo: {{count}} caracteres)"
+        wrong_length: "não possui o tamanho esperado ({{count}} caracteres)"
+        taken: "já está em uso"
+        not_a_number: "não é um número"
+        greater_than: "deve ser maior do que {{count}}"
+        greater_than_or_equal_to: "deve ser maior ou igual a {{count}}"
+        equal_to: "deve ser igual a {{count}}"
+        less_than: "deve ser menor do que {{count}}"
+        less_than_or_equal_to: "deve ser menor ou igual a {{count}}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
+
+    models:
+      user:
+        one: "usuario"
+        other: "usuarios"
+
+    attributes:
+      user:    
+        cpf_cnpj: "CPF/CNPJ"
+        username: "Usuário"
+        email: "E-Mail"
+        status: "Status"
+        password: "Senha"
+        password_confirmation: "Confirmação"
+                    
+      
+      
+  
+  
+#   new: "Novo"
+#   list: "Lista de "
+#   edit: "Editar"
+#   delete: "Tem certeza que deseja deletar"
+#   views:
+#     pagination:
+#       next: ""
+#       previous: ""
+#   back: "Voltar"
+#   show: "Exibir"
+#   
+#   
+#   sponsor:
+#     option:
+#       yes: "Sim"
+#       no: "Não"
+# 
+#   helpers:
+#     submit:
+#       create: "criar %{model}"
+#       update: "atualizar %{model}"
+# 
+#   title_apps: "Avaliação do retorno econômico de projetos sociais - Areps"
+# 
+# 
+#   dashboard:
+#     index:
+#       title: "Dashboard"
+#   configuration:
+#     beacon:
+#       title: "Farol"
+#     status:
+#       title: "Status"
+#     type_project:
+#       title: "Tipo de projeto"
+#     following_market:
+#       title: "Segmento de mercado"
+#     unit_measure:
+#       title: "Unidade de medida"
+#     signal_range:
+#       title: "Sinal"
+#     range_beacon:
+#       title: "Faixa de farol"
+#     indicator:
+#       title: "Indicador"
+#     company:
+#       title: "Empresa"
+#     contact:
+#       title: "Contatos"
+#     user:
+#       title: "Usuários"
+# 
+# 
+#   project_user:
+#     new:
+#       title: "Adicionar projeto em usuário"
+#       button: "Criar"
+#     listing:
+#       title: "Projetos de usuário"
+#       new: "Adicionar projeto em usuário"
+#       list: "Lista de projetos por usuário"
+#   roles:
+#     listing:
+#       title: "Regras de usuários"
+#       new: "Adicionar projeto em usuário"
+#       list: "Lista de usuários"
+#         
+#   users:
+#     new:
+#       title: "Novo usuário"
+#       button: "Criar"
+#     edit:
+#       title: "Editando usuário"
+#       button: "Alterar"
+#     listing:
+#       title: "Usuários"
+#       new: "Novo usuário"
+#       list: "Lista de usuários"
+#     message:
+#       new: "Usuário foi criado com sucesso."
+#       update: "Usuário foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o usuário de ser salvo:"
+# 
+#   status_report:
+#     show:
+#       title: 'Relatório de status'
+#     new:
+#       title: "Novo relatório de status"
+#       button: "Criar"
+#     edit:
+#       title: "Editando relatório de status"
+#       button: "Alterar"
+#     listing:
+#       title: "Relatórios de status"
+#       new: "Novo relatório de status"
+#       list: "Lista de relatório de status"
+#     message:
+#       new: "Relatório de status foi criado com sucesso."
+#       update: "Relatório de status foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o relatório de status de ser salvo:"
+#       valid_date_month_year: "Mês/Ano"
+#       valid_date_description: "informado, diferente da data de início e término do projeto"
+# 
+#   result_qualitative:
+#     new:
+#       title: "Novo resultado qualitativo"
+#       button: "Criar"
+#     edit:
+#       title: "Editando resultado qualitativo"
+#       button: "Alterar"
+#     listing:
+#       title: "Resultados qualitativos"
+#       new: "Novo resultado qualitativo"
+#       list: "Lista de resultado qualitativo"
+#     message:
+#       new: "Resultado qualitativo foi criado com sucesso."
+#       update: "Resultado qualitativo foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o resultado qualitativo de ser salvo:"
+#       valid_date_month_year: "Mês/Ano"
+#       valid_date_description: "informado, diferente da data de início e término do projeto"
+# 
+#   stake_holder:
+#     new:
+#       title: "Novo stake holder"
+#       button: "Criar"
+#     edit:
+#       title: "Editando stake holder"
+#       button: "Alterar"
+#     listing:
+#       title: "Stake holder"
+#       new: "Novo stake holder"
+#       list: "Lista de stake holder"
+#     message:
+#       new: "Stake holder foi criado com sucesso."
+#       update: "Stake holder foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o stake holder de ser salvo:"
+# 
+# 
+#   attachment:
+#     new:
+#       title: "Criando novo anexo"
+#       button: "Criar"
+#     edit:
+#       title: "Editando anexo"
+#       button: "Alterar"
+#     listing:
+#       title: "Anexos"
+#       new: "Novo Anexo"
+#       list: "Lista de anexo"
+#     message:
+#       new: "Anexo foi criado com sucesso."
+#       update: "Anexo foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o anexo de ser salvo:"
+# 
+#   beacon:
+#     new:
+#       title: "Criando novo farol"
+#       button: "Criar"
+#     edit:
+#       title: "Editando farol"
+#       button: "Alterar"
+#     listing:
+#       title: "Farol"
+#       new: "Novo farol"
+#       list: "Lista de farois"
+#     message:
+#       new: "Farol foi criado com sucesso."
+#       update: "Farol foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o farol de ser salvo:"
+# 
+#   status:
+#     new:
+#       title: "Criando novo status"
+#       button: "Criar"
+#     edit:
+#       title: "Editando status"
+#       button: "Alterar"
+#     listing:
+#       title: "Status"
+#       new: "Novo status"
+#       list: "Lista de status"
+#     message:
+#       new: "Status foi criado com sucesso."
+#       update: "Status foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o status de ser salvo:"
+# 
+#   type_project:
+#     new:
+#       title: "Criando novo tipo de projeto"
+#       button: "Criar"
+#     edit:
+#       title: "Editando tipo de projeto"
+#       button: "Alterar"
+#     listing:
+#       title: "Tipo de projeto"
+#       new: "Novo tipo de projeto"
+#       list: "Lista de tipos de projetos"
+#     message:
+#       new: "Tipo de projeto foi criado com sucesso."
+#       update: "Tipo de projeto foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o tipo de projeto de ser salvo:"
+# 
+#   following_market:
+#     new:
+#       title: "Criando novo segmento de mercado"
+#       button: "Criar"
+#     edit:
+#       title: "Editando segmento de mercado"
+#       button: "Alterar"
+#     listing:
+#       title: "Segmento de mercado"
+#       new: "Novo segmento de mercado"
+#       list: "Lista de segmento de mercado"
+#     message:
+#       new: "Segmento de mercado foi criado com sucesso."
+#       update: "Segmento de mercado foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o segmento de mercado de ser salvo:"
+# 
+#   unit_measure:
+#     new:
+#       title: "Criando nova unidade de medida"
+#       button: "Criar"
+#     edit:
+#       title: "Editando unidade de medida"
+#       button: "Alterar"
+#     listing:
+#       title: "Unidade de medida"
+#       new: "Nova unidade de medida"
+#       list: "Lista de unidade de medida"
+#     message:
+#       new: "Unidade de medida foi criado com sucesso."
+#       update: "Unidade de medida foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram a unidade de medida de ser salvo:"
+# 
+# 
+#   signal_range:
+#     new:
+#       title: "Criando novo sinal"
+#       button: "Criar"
+#     edit:
+#       title: "Editando sinal"
+#       button: "Alterar"
+#     listing:
+#       title: "Sinal"
+#       new: "Novo sinal"
+#       list: "Lista de sinais"
+#     message:
+#       new: "Sinal foi criado com sucesso."
+#       update: "Sinal foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o sinal de ser salvo:"
+# 
+#   range_beacon:
+#     new:
+#       title: "Criando nova faixa de farol"
+#       button: "Criar"
+#     edit:
+#       title: "Editando faixa de farol"
+#       button: "Alterar"
+#     listing:
+#       title: "Faixa de farol"
+#       new: "Nova faixa de farol"
+#       list: "Lista de faixa de farol"
+#     message:
+#       new: "Faixa de farol foi criado com sucesso."
+#       update: "Faixa de farol foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram a faixa de farol de ser salvo:"
+# 
+# 
+#   indicator:
+#     new:
+#       title: "Criando novo indicador"
+#       button: "Criar"
+#     edit:
+#       title: "Editando indicador"
+#       button: "Alterar"
+#     listing:
+#       title: "Indicador"
+#       new: "Novo indicador"
+#       list: "Lista de indicadores"
+#     message:
+#       new: "Indicador foi criado com sucesso."
+#       update: "Indicador foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o indicador de ser salvo:"
+# 
+#   company:
+#     new:
+#       title: "Criando nova empresa"
+#       button: "Criar"
+#     edit:
+#       title: "Editando empresa"
+#       button: "Alterar"
+#     listing:
+#       title: "Empresa"
+#       new: "Nova empresa"
+#       list: "Lista de empresas"
+#     message:
+#       new: "Empresa foi criado com sucesso."
+#       update: "Empresa foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram a empresa de ser salvo:"
+# 
+#   collaborator:
+#     new:
+#       title: "Criando novo colaborador"
+#       button: "Criar"
+#     edit:
+#       title: "Editando colaborador"
+#       button: "Alterar"
+#     listing:
+#       title: "Colaborador"
+#       new: "Novo colaborador"
+#       list: "Lista de colaboradores"
+#     message:
+#       new: "Colaborador foi criado com sucesso."
+#       update: "Colaborador foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o colaborador de ser salvo:"
+# 
+# 
+#   project:
+#     new:
+#       title: "Criando novo projeto"
+#       button: "Criar"
+#     edit:
+#       title: "Editando projeto"
+#       button: "Alterar"
+#     listing:
+#       title: "Projeto"
+#       new: "Novo projeto"
+#       list: "Lista de projetos"
+#     message:
+#       new: "Projeto foi criado com sucesso."
+#       update: "Projeto foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o projeto de ser salvo:"
+# 
+# 
+#   contact:
+#     new:
+#       title: "Criando novo contato"
+#       button: "Criar"
+#     edit:
+#       title: "Editando contato"
+#       button: "Alterar"
+#     listing:
+#       title: "Contato"
+#       new: "Novo contato"
+#       list: "Lista de contatos"
+#     message:
+#       new: "Contato foi criado com sucesso."
+#       update: "Contato foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o contato de ser salvo:"
+# 
+#   bourne:
+#     new:
+#       title: "Criando nova meta"
+#       button: "Criar"
+#     edit:
+#       title: "Editando meta"
+#       button: "Alterar"
+#     listing:
+#       title: "Metas"
+#       new: "Nova meta"
+#       list: "Lista de metas"
+#     message:
+#       new: "Meta foi criado com sucesso."
+#       update: "Meta foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram a meta de ser salvo:"
+# 
+#   bourne_realized:
+#     new:
+#       title: "Criando novo valor meta"
+#       button: "Criar"
+#     edit:
+#       title: "Editando valor meta"
+#       button: "Alterar"
+#     listing:
+#       title: "Valores Meta"
+#       new: "Novo valor meta"
+#       list: "Lista de metas realizadas"
+#     message:
+#       new: "Valores meta foi criado com sucesso."
+#       update: "Valores meta foi atualizado com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram o valores meta de ser salvo:"
+#       valid_date_month_year: "Mês/Ano"
+#       valid_date_description: "informado, diferente da data de início e término do projeto"
+# 
+#   action:
+#     new:
+#       title: "Criando nova ação"
+#       button: "Criar"
+#     edit:
+#       title: "Editando ações"
+#       button: "Alterar"
+#     listing:
+#       title: "Ação"
+#       new: "Nova ação"
+#     message:
+#       new: "Ação foi criada com sucesso."
+#       update: "Ação foi atualizada com sucesso."
+#       error: "Ocorreram os seguintes erros que impediram a ação de ser salvo:"
+#   # formatos de data e hora
+#   date:
+#     formats:
+#       default: "%d/%m/%Y"
+#       short: "%d de %B"
+#       long: "%d de %B de %Y"
+# 
+#     day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+#     abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+#     month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+#     abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+#     order: [ :day, :month, :year ]
+# 
+#   time:
+#     formats:
+#       default: "%A, %d de %B de %Y, %H:%M h"
+#       short: "%d/%m, %H:%M h"
+#       long: "%A, %d de %B de %Y, %H:%M h"
+#     am: ''
+#     pm: ''
+# 
+# 
+#   # date helper distanci em palavras
+#   datetime:
+#     distance_in_words:
+#       half_a_minute: 'meio minuto'
+#       less_than_x_seconds:
+#         one: 'menos de 1 segundo'
+#         other: 'menos de {{count}} segundos'
+# 
+#       x_seconds:
+#         one: '1 segundo'
+#         other: '{{count}} segundos'
+# 
+#       less_than_x_minutes:
+#         one: 'menos de um minuto'
+#         other: 'menos de {{count}} minutos'
+# 
+#       x_minutes:
+#         one: '1 minuto'
+#         other: '{{count}} minutos'
+# 
+#       about_x_hours:
+#         one: 'aproximadamente 1 hora'
+#         other: 'aproximadamente {{count}} horas'
+# 
+#       x_days:
+#         one: '1 dia'
+#         other: '{{count}} dias'
+# 
+#       about_x_months:
+#         one: 'aproximadamente 1 mês'
+#         other: 'aproximadamente {{count}} meses'
+# 
+#       x_months:
+#         one: '1 mês'
+#         other: '{{count}} meses'
+# 
+#       about_x_years:
+#         one: 'aproximadamente 1 ano'
+#         other: 'aproximadamente {{count}} anos'
+# 
+#       over_x_years:
+#         one: 'mais de 1 ano'
+#         other: 'mais de {{count}} anos'
+#     prompts:
+#       year:   "Ano"
+#       month:  "Mês"
+#       day:    "Dia"
+#       hour:   "Hora"
+#       minute: "Minuto"
+#       second: "Segundos"
+# 
+#   # numeros
+#   number:
+#     format:
+#       precision: 3
+#       separator: ','
+#       delimiter: '.'
+#     currency:
+#       format:
+#         unit: 'R$'
+#         precision: 2
+#         format: '%u %n'
+#         separator: ','
+#         delimiter: '.'
+#     percentage:
+#       format:
+#         delimiter: '.'
+#     precision:
+#       format:
+#         delimiter: '.'
+#     human:
+#       format:
+#         precision: 1
+#         delimiter: '.'
+#       storage_units:
+#         format: "%n %u"
+#         units:
+#           byte:
+#             one: "Byte"
+#             other: "Bytes"
+#           kb: "KB"
+#           mb: "MB"
+#           gb: "GB"
+#           tb: "TB"
+# 
+# # Used in array.to_sentence.
+#   support:
+#     array:
+#       words_connector: ", "
+#       two_words_connector: " e "
+#       last_word_connector: " e "
+# 
+#   # Active Record
+#   activerecord:
+#     errors:
+#       models:
+#         project:
+#           attributes:
+#             end_date:
+#               after: "não deve ser inferior a data de inicio."
+#       template:
+#         header:
+#           one: "Não foi possível gravar {{model}}: 1 erro"
+#           other: "Não foi possível gravar {{model}}: {{count}} erros."
+#         body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+#       messages:
+#         inclusion: "não está incluído na lista"
+#         exclusion: "não está disponível"
+#         invalid: "não é válido"
+#         confirmation: "não está de acordo com a confirmação"
+#         accepted: "deve ser aceito"
+#         empty: "não pode ficar vazio"
+#         blank: "não pode ficar em branco."
+#         too_long: "é muito longo (máximo: {{count}} caracteres)"
+#         too_short: "é muito curto (mínimo: {{count}} caracteres)"
+#         wrong_length: "não possui o tamanho esperado ({{count}} caracteres)"
+#         taken: "já está em uso"
+#         not_a_number: "não é um número"
+#         greater_than: "deve ser maior do que {{count}}"
+#         greater_than_or_equal_to: "deve ser maior ou igual a {{count}}"
+#         equal_to: "deve ser igual a {{count}}"
+#         less_than: "deve ser menor do que {{count}}"
+#         less_than_or_equal_to: "deve ser menor ou igual a {{count}}"
+#         odd: "deve ser ímpar"
+#         even: "deve ser par"
+# 
+#     models:
+#       beacon:
+#         one: "farol"
+#         other: "farois"
+#       status:
+#         one: "status"
+#         other: "status"
+#       type_project:
+#         one: "tipo de projeto"
+#         other: "tipos de projeto"
+#       following_market:
+#         one: "segmento de mercado"
+#         other: "segmentos de mercado"
+#       unit_measure:
+#         one: "unidade de medida"
+#         other: "unidades de medida"
+#       signal_range:
+#         one: "sinal"
+#         other: "sinais"
+#       company:
+#         one: "empresa"
+#         other: "empresas"
+#       range_beacon:
+#         one: "faixa de farol"
+#         other: "faixas de farol"
+#       indicator:
+#         one: "indicador"
+#         other: "indicadores"
+#       collaborator:
+#         one: "colaborador"
+#         other: "colaboradores"
+#       project:
+#         one: "projeto"
+#         other: "projetos"
+#       contact:
+#         one: "contato"
+#         other: "contatos"
+#       bourne:
+#         one: "meta"
+#         other: "metas"
+#       bourne_realized:
+#         one: "Valor meta"
+#         other: "Valores meta"
+#       action:
+#         one: "ação"
+#         other: "ações"
+#       address:
+#         one: "endereço"
+#         other: "endereços"
+#       attachment:
+#         one: 'anexo'
+#         other: 'anexos'
+#       contact_project:
+#         one: 'contato de projeto'
+#         other: 'contatos no Projeto'
+#       result_qualitative:
+#         one: 'resultado Qualitativo'
+#         other: 'resultados Qualitativos'
+#       stake_holder:
+#         one: 'stake holder'
+#         other: 'stake holders'  
+#       role:
+#         one: 'regras'
+#         other: 'regras'
+#       role_user:
+#         one: 'regra de usuário'
+#         other: 'regras de usuários'
+#       status_report:
+#         one: 'status report'
+#         other: 'status reports'
+#       result_qualitative:
+#         one: 'resultado qualitativo'
+#         other: 'resultados qualitativo'
+#       user:
+#         one: 'usuário'
+#         other: 'usuários'
+# 
+#     attributes:
+#       attachment:
+#         file: "Arquivo"
+#         name: "Nome"
+#         body: "Descrição"
+#       user:
+#         username: 'Nome'
+#         password: 'Senha'
+#         password_confirmation: 'Confirmação de senha'
+#         all_projects: 'Usuário pode trabalhar em todos os projetos?'
+#         email: "EMail"
+# 
+#       beacon:
+#         description: "Descrição"
+#         image_beacon: "Cor do farol"
+#       status:
+#         description: "Descrição"
+#         beacon: "Cor do farol"
+#       type_project:
+#         description: "Descrição"
+#       following_market:
+#         description: "Descrição"
+#       unit_measure:
+#         description: "Descrição"
+#         abbreviation: "Abreviação"
+#       signal_range:
+#         description: "Descrição"
+#         signal: "Sinal"
+#       range_beacon:
+#         signal_range_id: "Sinal da faixa"
+#         beacon_id: "Farol"
+#       indicator:
+#         description: "Descrição"
+#         better_indicator: "Melhor"
+#         unit_measure: "Unidade medida"
+#         unit_measure_id: "Unidade medida"
+#         range_beacon: "Faixa"
+#         range_beacon_id: "Faixa"
+#         beacon: "Farol"
+#       company:
+#         company_name: "Nome"
+#         trading_name: "Nome fantasia"
+#         cnpj: "CNPJ"
+#         company_presentation: "Breve apresentação da empresa"
+#         following_market_id: "Segmento mercado"
+#         following_market: "Segmento mercado"
+#         collaborator: "Colaborador"
+#       address:
+#         street: "Rua/Av."
+#         number: "Número"
+#         complement: "Complemento"
+#         neighborhood: "Bairro"
+#         city: "Cidade"
+#         state: "Estado"
+#         zip_code: "Cep"
+#       collaborator:
+#         company_id: "Empresa"
+#         name: "Nome"
+#         post: "Cargo"
+#         sector: "Setor"
+#         email: "Email"
+#       project:
+#         company: "Empresa"
+#         typeproject: "Tipo de projeto"
+#         status: "Status"
+#         title: "Projeto"
+#         description: "Descrição"
+#         start_date: "Início"
+#         end_date: "Término"
+#         investment: "Investimento"
+#         context: "Contexto"
+#         target: "Alvo"
+#         objective_general: "Objetivo geral"
+#         objective_expected: "Objetivo esperado"
+#         report: "Report"
+#         qualitative: "Qualitativo"
+#         attachment: "Anexo"
+#         contact: "Contato"
+#         bourne: "Meta"
+#         stake_holder: "Stakeholder"
+#       contact:
+#         project: "Projeto"
+#         name: "Nome"
+#         post: "Cargo"
+#         sector: "Setor"
+#         email: "Email"
+#         contact: "Contato"
+#       bourne:
+#         description: "Descrição"
+#         project: "Projeto"
+#         collaborator: "Colaborador"
+#         indicator: "Indicador"
+#         code_bourne_parent: "Meta pai"
+# 
+#       bourne_realized:
+#         bourne: "Meta"
+#         month_bourne_realized: "Mês"
+#         year_bourne_realized: "Ano"
+#         bourne_bourne_realized: "Meta"
+#         realized_bourne_realized: "Realizado"
+#       action:
+#         bourne_id: "Meta"
+#         description: "Descrição"
+#         status: "Status"
+#         start_date_provided: "Início previsto"
+#         end_date_provided:  "Término previsto"
+#         start_date_realized: "Início realizado"
+#         end_date_realized:  "Término realizado"
+# 
+#       status_report:
+#         month_status_report: "Mês"
+#         year_status_report: "Ano"
+#         result_status_report: "Status report"
+#         important_poings_status_report: "Pontos importantes"
+#         next_step_status_report: "Próximos passos"
+#         date_status_report: "Data"
+# 
+#       result_qualitative:
+#         month_result_qualitative: "Mês"
+#         year_result_qualitative: "Ano"
+#         result_result_qualitavive: "Resultado qualitativo"
+#         date_result_qualitative: "Data"
+#      
+#       stake_holder:    
+#         description: "Descrição"
+#         sponsor: "Patrocinador"
+#         phone: "Telefone"
+#         email: "email"
+#         
+#       project_user:
+#         project: "Projeto"

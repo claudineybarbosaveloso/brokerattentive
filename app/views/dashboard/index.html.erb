@@ -1,0 +1,5 @@
+<% if current_user.administrator %>
+  <%= render 'page_adm' %>
+<% else %>  
+  <%= render 'page_broker' %>
+<% end %>

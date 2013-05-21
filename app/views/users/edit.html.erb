@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="span8 offset2">
+      <div class="light-content">
+        <h2>Usuário -  (<%= @user.username.to_s.humanize %>)</h2>
+        <hr>
+        <div class="row-fluid">                            
+          <%= form_for(@user, :url => update_status_path(@user), :html => {:class => "simple_form form-horizontal SigninForm AuthForm"}) do |f| %>
+            <fieldset>     
+              <div class="control-group">
+                <%= f.label :status, :class => "email optional" %>
+                <div class="controls"> 
+									<% if current_user.administrator  %>
+	  							  <%= f.select :status, User::STATUS, options = {:prompt => 'Selecione...'} %>
+									<% else %>
+	  							  <%= current_user.status %>
+									<% end %>
+                </div>
+              </div>   
+              <div class="control-group">
+                <%= f.label :password, :class => "email optional" %>
+                <div class="controls">
+									<!-- <a class="btn" data-toggle="modal" href="#changePassword">Alterar senha</a>     -->
+									<%= link_to "Alterar senha", change_password_path(@user), :class => "btn" %>
+                </div>
+              </div>   
+              <hr>
+							<div class="clr"></div>
+							<div class="controls">
+							  <%= f.submit "Salvar", :class => "btn btn-large btn-primary" %>
+							</div>
+						</fieldset>   
+						
+          <% end %>                          
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>

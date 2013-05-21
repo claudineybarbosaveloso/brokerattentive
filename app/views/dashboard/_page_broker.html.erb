@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row shows">
+	  <div class="span4">
+      <div class="light-content">  
+			  <div class="profile">                 
+				  <%= image_tag('no-face.jpg', :width => "32", :height => "32", :class => "rounded-img pull-left avatar", :title => "Sem imagem", :border => "0" ) %>
+					<h3><%= current_user.username %> </h3>
+					<small><a rel="tooltip" data-original-title="Upgrade your plan" href="/plans">Prévia semanal</a> (25 importações)</small>                       
+					<hr>
+					<div class="row fluid">
+            <div class="span1">
+              <strong><%= @extract_weeklies.length %></strong><br><small class="muted">SEMANAL</small>
+            </div>
+            <div class="span1">
+              <strong><%= @extract_monthlies.length %></strong><br><small class="muted">MENSAL</small>
+            </div>
+            <div class="span1">
+              <strong><%= @consolidates.length %></strong><br><small class="muted">ANOMALIAS</small>
+            </div>
+          </div>
+					<br>
+			  </div>
+      </div>	  	
+      <div class="light-content">
+      	
+      </div>
+	  </div>  
+		<div class="span8">
+			<div class="light-content">  
+				<h2>
+					Minhas Importações 
+					<%= link_to root_path, :class => "btn btn-primary pull-right" do %>   
+					  <i class="icon-plus icon-white"></i>
+					<% end %>  
+				  
+				</h2>
+				<hr>
+				<div class="alert alert-info empty_hint">Adicionar novas importações clicando no botão <strong>+</strong> acima.<%= image_tag('diag-arrow.png', :title => "Siga a seta", :border => "0") %></div> 
+
+				
+				</div>
+			</div>  
+  </div>
+</div>

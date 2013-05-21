@@ -1,0 +1,44 @@
+# Messages for Brazilian Portuguese (Português do Brasil)
+# Exported from translatewiki.net
+# Export driver: syck
+# Author: Diego Queiroz
+# Author: Vgeorge
+"pt-BR": 
+  errors:
+    messages:
+      not_found: "Não encontrado"
+      already_confirmed: "Já foi confirmada"
+      not_locked: "Não está bloqueada"
+
+  devise:
+    failure:
+      unauthenticated: 'Você precisa entrar ou se registrar antes de continuar.'
+      unconfirmed: 'Você precisa confirmar sua conta antes de continuar.'
+      locked: 'Sua conta está bloqueada.'
+      invalid: 'Email ou senha inválido.'
+      invalid_token: 'Token de autenticação inválido.'
+      timeout: 'Sua sessão expirou, por favor entre novamente para continuar.'
+      inactive: 'Sua conta não foi ativada ainda.'
+    sessions:
+      signed_in: 'Usuário logado com sucesso.'
+      signed_out: 'Saiu com sucesso.'
+    passwords:
+      send_instructions: 'Você receberá um e-mail com instruções para redefinir a sua senha em alguns minutos.'
+      updated: 'Sua senha foi modificada com sucesso! Agora você pode entrar.'
+    confirmations:
+      send_instructions: 'Você vai receber um e-mail com instrução sobre como confirmar a sua conta em alguns minutos.'
+      confirmed: 'Sua conta foi confirmada com sucesso. Agora você pode entrar.'
+    registrations:
+      signed_up: 'Usuário logado com sucesso.'
+      updated: 'Você atualizou a sua conta com sucesso.'
+      destroyed: 'Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.'
+    unlocks:
+      send_instructions: 'Você vai receber um e-mail com instruções sobre como desbloquear a sua conta em alguns minutos.'
+      unlocked: 'Sua conta foi desbloqueada com sucesso. Agora você pode entrar.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instruções de confirmação'
+      reset_password_instructions:
+        subject: 'Instruções de redefinição de senha'
+      unlock_instructions:
+        subject: 'Desbloquear instruções'  

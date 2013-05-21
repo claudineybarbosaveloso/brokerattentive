@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="light-content">
+      <h2>Consolidar comissões</h2>
+      <div class="row-fluid">
+	      <%= form_tag(:action => 'consolidate', :method => "get", :multipart => true) do %>
+	        <fieldset>
+	          <div class="control-group">
+	            <label class="control-label">Mês de referência:</label>  
+	  				</div>
+            <div class="input">
+							<%= select_tag :month_reference, 
+							               options_for_select([["Janeiro", "1"], 
+							                  ["Fevereiro", "2"], ["Março", "3"], 
+							                 ["Abril", "4"], ["Maio","5"], ["Junho","6"], ["Julho","7"], ["Agosto","8"], ["Setembro","9"], ["Outubro","10"], ["Novembro","11"], ["Dezembro","12"]], DateTime.now.month)%>
+            </div>
+	          <div class="control-group">
+						  <label class="control-label">Ano de referência:</label>	
+						</div>
+
+            <div class="input">
+							<%= select_tag :year_reference, 
+							               options_for_select([["2012", 2012], 
+							                  ["2013", 2013], ["2014", 2014], 
+							                 ["2015", 2015], ["2016",2016], ["2017",2017], ["2018",2018], ["2019",2019], ["2020",2020], ["2021",2021], ["2022",2022], ["2023",2023]], DateTime.now.year), options = {:height => "32"} %>
+            </div>
+						
+						<div class="clr"></div>
+						<div class="controls">
+						  <%= button_tag 'Ok', options={:class => "btn-primary btn btn-large", :id => "login"} %>
+						</div>
+					</fieldset> 
+				  
+				<% end %>
+		  </div>
+    </div>
+  </div>
+</div>

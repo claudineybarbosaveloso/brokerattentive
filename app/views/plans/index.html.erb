@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="light-content">
+      <h2>Listagem dos planos</h2>    
+			<table class="table table-striped">   
+			  <tr>
+			    <th>Name</th>
+			    <th>Maximum customers</th>
+			    <th>Price</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr>  
+				<% @plans.each do |plan| %>
+				  <tr>
+				    <td><%= plan.name %></td>
+				    <td><%= plan.maximum_customers %></td>
+				    <td><%= plan.price %></td>
+				    <td><%= link_to 'Show', plan %></td>
+				    <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+				    <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				  </tr>
+				<% end %>
+			
+			</table>  
+			<%= link_to "Novo Plano", new_plan_path, :class => "btn btn-navigation btn-default" %>
+			
+    </div>  	
+  </div>	
+</div>

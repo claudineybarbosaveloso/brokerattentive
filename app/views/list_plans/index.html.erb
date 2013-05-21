@@ -1,0 +1,89 @@
+<div class="container">
+	<div class="row">   
+		<div class="span12">
+			
+		</div>
+	</div>
+	<div class="row">   
+		<div class="span12">
+			<div class="light-content">
+				<h2>Planos e Preços</h2>
+				<hr>
+				<p>Pronto para ter sua carteira de clientes controlada sem perder mais nenhum cliente? Comece com o plano certo para você e atualize a qualquer momento!</p>
+				<table class="table table-bordered table-pricing">   
+					<tr>
+						<th>Pacotes</th>
+						<% @plans.each do |plan| %>
+						<th><%= plan.name %></th>
+						<% end %>
+					</tr>  
+					<tr>
+						<th>Carteira de clientes:</th>
+						<% @plans.each do |plan| %>
+						  <% if plan.maximum_customers == 0 || plan.maximum_customers > 300 %>   
+						    <th>Ilimitado</th>
+							<% else plan.maximum_customers > 300 %>
+							  <th>Até <%= plan.maximum_customers %> clientes</th>  
+							<% end %>
+						<% end %>
+					</tr>
+					<tr>
+						<th>Expira em:</th>
+						<th>30 dias</th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<th>Envio de EMail:</th>
+						<th></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+					</tr>
+					<tr>
+						<th>Controle de parcelas</th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+					</tr>  
+					<tr>
+						<th>Lembrete</th>
+						<th></th>
+						<th></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+					</tr>  
+					<tr>
+						<th>Suporte</th>
+						<th></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+						<th><%= image_tag("check_in.png") %></th>
+					</tr>  
+					<tr>
+						<th>Custo mensal</th> 
+						<% @plans.each do |plan| %>
+						  <% if plan.price == 0.0  %>
+						    <th>Grátis</th>  
+						  <% else %>      
+						    <th>R$ <%= number_to_currency(plan.price, :unit => '', :separator => ",", :delimiter => ".") %></th>
+						  <% end %>
+						<% end %>
+					</tr>  
+					<tr>         
+						<th>Registre-se</th>
+						<% @plans.each do |plan| %>   
+							<% if plan.id == 1 %>
+								<th><%= link_to "Degustação", new_user_registration_path(:type_plan => "#{plan.id}"), :class => "btn btn-navigation btn-large" %></th>						  
+							<% else %>	
+							  <th><%= link_to "Comprar", new_user_registration_path(:type_plan => "#{plan.id}"), :class => "btn btn-primary btn-large" %></th>
+						  <% end %>
+						<% end %>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

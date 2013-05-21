@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row shows">
+    <div class="span12">
+      <div class="light-content">
+        <h2>Adicionar comissão sobre 1a contribuição</h2>
+        <hr>
+        <%= form_tag :action => 'import_extract_weeklies', :class => 'form-horizontal', :method => "get", :multipart => true do %>
+          <fieldset>
+            <% if current_user.administrator  %>
+	            <div class="control-group">
+	              <%= label_tag :user, "Nome" %>
+	              <div class="controls">
+	                <%= select_tag :user, options_from_collection_for_select(@users, "id", "username"), :class => "string email optional input-xlarge", :prompt => "Selecione..." %>  
+	              </div>
+	            </div>
+						<% end %>
+            <div class="control-group">
+              <%= label_tag :name, "Nome" %>
+              <div class="controls">
+                <%= text_field_tag :name, nil, :class => "string email optional input-xlarge" %>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= label_tag :file_import, "Selecione o arquivo", :class => "email optional" %>
+              <div class="controls">
+                <%= file_field_tag :file_import, :class => "string email optional input-xlarge" %>
+              </div>
+            </div>
+            <hr>
+            <div class="clr"></div>
+            <div class="controls">
+              <%= button_tag 'Importar', options={:class => "btn btn-large btn-primary", :id => "login"} %>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <h2>Semanais adicionados recentemente</h2>
+			<ul class="unstyled">  
+				<% if @extract_weeklies.count == 0  %>   
+				  <p>Nenhuma importação</p>
+				<% else %>
+				  <% @extract_weeklies.each do |extract_weekly| %>
+				     <li>
+				      Extrato de pagamento de <%= extract_weekly.period_initial.strftime("%d/%m/%Y") %> até <%= extract_weekly.period_final.strftime("%d/%m/%Y") %>
+				      <%= link_to image_tag('beacon/verde.png', :border => "0"), list_extract_weekly_path(extract_weekly.period_initial.strftime("%d-%m-%Y"),extract_weekly.period_final.strftime("%d-%m-%Y")) %>
+				    </li>
+				  <% end %>
+				
+				<% end %>
+			</ul>
+      <hr>
+    </div>
+    <div class="span6">
+      <h2>Mensais adicionados recentemente</h2>
+        <ul class="unstyled">
+          <% @extract_monthlies.each do |extract_monthly| %>
+             <li>
+              Extrato de pagamento de <%= extract_monthly.period_initial.strftime("%d/%m/%Y") %> até <%= extract_monthly.perido_final.strftime("%d/%m/%Y") %>
+              <%= link_to image_tag('beacon/verde.png', :border => "0"), list_extract_monthly_path(extract_monthly.period_initial.strftime("%d-%m-%Y"),extract_monthly.perido_final.strftime("%d-%m-%Y")) %>
+            </li>
+          <% end %>
+        </ul>
+      <hr>
+      <ul class="nav nav-pills nav-stacked"></ul>
+    </div>
+  </div>
+  <div class="row">
+  </div>
+</div>

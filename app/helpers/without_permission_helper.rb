@@ -1,0 +1,2 @@
+module WithoutPermissionHelper
+end

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brokerattentive</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>  
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>   
+
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container"> 
+				<%= link_to root_path, :class => "btn btn-navbar", :data => {:target => ".nav-collapse", :toggle => "collapse"} do %>   
+				  <i class="icon-plus icon-white"></i>
+				  <span class="i-bar"></span>  
+				  <span class="i-bar"></span>
+				  <span class="i-bar"></span>
+				<% end %>  
+				<h3><%= link_to t("title-home"), root_path, :class => "brand" %></h3> 
+				<div class="nav-collapse">
+					<% t = false %> 
+					<% if t  %>
+					  <ul class="nav">
+					    <li><%= link_to t("navigation.dashboard"), dashboard_path %></li>	
+					    <li class="dropdown">
+								<%= link_to "#", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}, :role => "button" do %>
+								  <%= t("navigation.import") %>
+								  <span class="caret"></span>
+								<% end %>
+								<ul class="dropdown-menu">
+									  <li><%= link_to "Comissões sobre carteira", extract_monthlies_path %></li>
+									  <li><%= link_to "Comissões sobre 1a contribuiçao", extract_weeklies_path %></li>
+									  <li><%= link_to "Recuperação de comissões sobre contribuiçao paga", root_path %></li>
+									  <li><%= link_to "Bonus fidelização/Bonus transferencia de reserva", root_path %></li>
+								</ul>
+						  </li> 
+						  <li><%= link_to t("navigation.consolidate"), select_period_consolidate_path %></li> 
+					    <li><%= link_to t("navigation.exit"), signout_path %></li> 
+					  </ul>   
+					  <div class="btn-group pull-right"> 
+						  <%= link_to dashboard_path, :class => "btn btn-navigation" do %>   
+							  <i class="icon-film icon-white"></i>
+							  <%= t('navigation.dashboard') %>
+							<% end %>  
+							
+					    <a class="btn btn-navigation dropdown-toggle" data-toggle="dropdown" href="#">
+						    <i class="icon-user icon-white"></i> 
+						    <span class="caret"></span>
+						  </a>  
+					    <ul class="dropdown-menu">                                           
+								<% if current_user.administrator %> 
+								  <li>   
+									  <%= link_to users_path do %>   
+										  <i class="icon-pencil"></i>
+										  <%= t('navigation.menu.list_users') %>
+										  
+										<% end %>
+								  </li> 
+								  <li>   
+									  <%= link_to edit_plan_path(current_user.id) do %>   
+										  <i class="icon-user"></i>
+										  <%= t('navigation.menu.profile') %>
+										<% end %>
+								  </li>   
+								<% else %>  
+									<li>   
+									  <%= link_to edit_user_registration_path do %>   
+										  <i class="icon-user"></i>
+										  Editar perfil
+										<% end %>
+								  </li>   
+								<% end %>
+								<li class="divider"></li>       
+							  <li>   
+								  <%= link_to signout_path do %>   
+									  <i class="i"></i>
+									  Sair
+									<% end %>
+							  </li> 
+						  </ul>
+					  </div>
+					<% else %>  
+					  <ul class="nav">
+					    <li><%= link_to t("navigation.characteristics"), feature_path %></li>	
+					    <li><%= link_to t("navigation.plans"), list_plans_path %></li>	
+					    <li><%= link_to t("navigation.support"), support_path %></li>	
+					    <li><%= link_to t("navigation.about"), about_path %></li>	
+					    <li><%= link_to t("navigation.contacts"), contact_path %></li>	
+					  </ul>
+					  <div class="btn-group pull-right">       
+					  	<%= link_to t("login.open"), new_user_session_path, :class => "btn btn-navigation" %>
+					  </div>
+					<% end %>                         
+				</div>
+			</div>
+		</div>
+	</div>
+  <%= yield %>       
+  <%= show_footer(controller_name.to_s, action_name.to_s) %>
+
+</body>
+</html>

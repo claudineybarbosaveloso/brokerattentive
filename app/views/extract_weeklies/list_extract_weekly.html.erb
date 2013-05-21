@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">     
+		<div class="light-content">
+		  <h4>Selecione um item para a busca</h4>
+		</div>
+    <div class="light-content">                                         
+      <h3>Comissão sobre 1a contribuicao - Extrato de pagamento de <%= params[:period_initial].to_date.strftime("%d/%m/%Y") %> até <%= params[:period_final].to_date.strftime("%d/%m/%Y") %></h3> 
+			<table class="table table-striped">
+			    <tr>
+				    <th rowspan="2">Matricula</th>
+				    <th rowspan="2">Série</th>
+				    <th rowspan="2">Proposta</th>
+				    <th rowspan="2">Cod.<br>Ben.</th>
+				    <th rowspan="2">Plano</th>
+				    <th rowspan="2">Número <br>Parcela</th>
+				    <th rowspan="2">Valor <br>Contrib.</th> 
+					  <th colspan="2">---Comissão---</th> 
+			    </tr>
+			    <tr>
+			        <th>perc.</th>
+			        <th>valor</th>
+			    </tr>  
+			    <% @value_total = 0 %>
+					<% @extract_payment_weeklies.each do |extract_weekly| %>    
+					  <%= puts extract_weekly.proposal %>
+					  <% if @consolidates.include?(extract_weekly.proposal)  %> 
+					    <%= puts "Claudiney" %>
+					  <% else %>  
+							<%= puts "Veloso" %>
+					    
+					  <tr>
+					    <td><%= extract_weekly.registration %></td>
+					    <td><%= extract_weekly.series %></td>
+					    <td><%= extract_weekly.proposal %></td>
+					    <td><%= extract_weekly.code_beneficiary %></td>
+					    <td><%= extract_weekly.plan %></td>
+					    <td><%= extract_weekly.number_quota %></td>
+					    <td>R$ <%=h number_to_currency(extract_weekly.value_contribution, :unit => '', :separator => ",", :delimiter => ".") %></td>
+					    <td><%= extract_weekly.commission_percentage %>
+					    <td>R$ <%=h number_to_currency(extract_weekly.commission_value, :unit => '', :separator => ",", :delimiter => ".") %></td>
+					  </tr> 
+					  <% end %>
+					  <% @value_total += extract_weekly.commission_value  %>
+					<% end %>  
+			    <tr>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th> 
+					  <th colspan="2">Total: R$ <%=h number_to_currency(@value_total, :unit => '', :separator => ",", :delimiter => ".") %></th> 
+			    </tr>
+					
+			</table>
+			</table>  
+    </div>  	
+  </div>	
+</div>

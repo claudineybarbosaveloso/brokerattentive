@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row shows">
+  	<div class="span12">
+  		<div class="light-content">
+				<h2>Usuario - <%= @user.plan.name %></h2>
+				<ul class="unstyled">
+					<li>
+						CPF: <%= @user.cpf_cnpj %>
+					</li>
+					<li>
+						E-Mail: <%= @user.email %>
+					</li>
+					<li>
+						Username: <%= @user.username %>
+					</li>
+					<li>
+						Status: <%= @user.status %>
+					</li>
+					<li>
+						Administrador: <%= @user.administrator %>
+					</li>
+					<li>
+						Creditos: <%= @user.credits %>
+					</li>
+					<li>
+					  Plano: <%= @user.plan.name %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

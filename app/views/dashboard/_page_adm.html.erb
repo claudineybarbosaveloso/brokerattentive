@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="light-content">
+      <h2>Listagem dos usuários</h2>    
+			<table class="table table-striped">   
+			  <tr>
+			    <th>Nome</th>
+			    <th>Status</th>
+			    <th>Plano</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr>  
+				<% @users.each do |user| %>
+				  <tr>
+				    <td><%= user.username %></td>
+				    <td><%= user.status %></td>
+				    <td><%= user.plan_id %></td>
+				    <td><%= link_to t('navigation.listing.show'), user %></td>
+				    <td><%= link_to t('navigation.listing.edit'), edit_user_path(user) %></td>
+				    <td><%= link_to t('navigation.listing.destroy'), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				    <td><%= link_to t('navigation.listing.upgrade_billing'), list_plans_path %></td>
+				    
+				  </tr>
+				<% end %>
+			
+			</table>  
+			<%= link_to "Novo Usuário", new_user_path, :class => "btn btn-navigation btn-default" %>
+			
+    </div>  	
+  </div>	
+</div>           

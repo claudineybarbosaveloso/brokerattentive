@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+    	<div class="hero-unit">
+    		<h1>É Fácil e Rápido.
+				<br/>
+				Junte-se a nós!
+				</h1>
+				<p>Surpreenda-se! O Corretor Atento é a solução para o gerenciamento de clientes da sua carteira.</p>
+				<div class="pull-right">
+					<%= link_to "Leia Mais", feature_path, :class => "btn btn-info btn-large" %>
+					<%= link_to "Inscreva-se", new_user_registration_path(:type_plan => 1), :class => "btn btn-primary btn-large" %>
+ 				</div>
+    	</div>
+			<div class="row">
+				<div class="span4"> 
+					<h2>O que é Corretor Atento?</h2>
+					<small>   
+						É um aplicativo que facilita e automatiza funções gerenciais da carteira de clientes do 	Corretor Bradesco. Através de uma amigável interface e funcionando em ambiente WEB, permite ao corretor a gestão de 	sua carteira de clientes, auditando e permitindo a conferência de sua planilha de comissões.						
+					</small>
+				</div>
+				<div class="span4">
+					<h2>Quem deve usá-lo?</h2> 
+					<small>
+						Todos os agentes de vendas e corretores que possuem carteira de clientes, com recebimento de comissões com 	recorrência.
+					</small>
+				</div>
+				<div class="span4">
+					<h2>Por que usá-lo?</h2>
+					<small>
+						Automatiza e agiliza o processo de auditoria do comissionamento recebido. Realiza ainda a conferência da carteira, acusando entrada e saída de clientes, pagamento de comissões recorrentes, vencimento de contratos entre outras funções, tudo para facilitar e deixar o corretor com mais tempo livre para vender.						
+					</small>
+				</div>
+			</div>
+			<br/>
+			<br/>
+      <div class="row">
+      	<div class="span12">
+      		<div class="alert alert-info">
+      			Corretor Atento facilita e automatiza sua carteira de clientes, faça já seu <%= link_to "cadastro", new_user_registration_path(:type_plan => 1), :class => "customer-free" %> e utilize por 30 dias grátis.
+      		</div>
+      	</div>
+      </div>
+    </div>	
+  </div>	
+</div>

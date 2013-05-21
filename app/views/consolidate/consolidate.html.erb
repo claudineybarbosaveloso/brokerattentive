@@ -1,0 +1,54 @@
+<div class="container">  
+  <div class="row">
+		<div class="light-content">
+		  <h4>Selecione um item para a busca</h4>  
+
+		</div>
+    <div class="light-content">                                         
+      <h2>Comissão sobre carteira</h2> 
+			<table class="table table-striped">
+			    <tr>
+				    <th rowspan="2">Matricula</th>
+				    <th rowspan="2">Série</th>
+				    <th rowspan="2">Proposta</th>
+				    <th rowspan="2">Cod.<br>Ben.</th>
+				    <th rowspan="2">Plano</th>
+				    <th rowspan="2">Número <br>Parcela</th>
+				    <th rowspan="2">Valor <br>Contrib.</th> 
+					  <th colspan="2">---Comissão---</th> 
+			    </tr>
+			    <tr>
+			        <th>perc.</th>
+			        <th>valor</th>
+			    </tr>  
+			    <% @value_total = 0 %>
+					<% @import.each do |extract_monthly| %>
+					  <tr>
+					    <td><%= extract_monthly.registration %></td>
+					    <td><%= extract_monthly.series %></td>
+					    <td><%= extract_monthly.proposal %></td>
+					    <td><%= extract_monthly.code_beneficiary %></td>
+					    <td><%= extract_monthly.plan %></td>
+					    <td><%= extract_monthly.number_quota %></td>
+					    <td>R$ <%=h number_to_currency(extract_monthly.value_contribution, :unit => '', :separator => ",", :delimiter => ".") %></td>
+					    <td><%= extract_monthly.commission_percentage %>
+					    <td>R$ <%=h number_to_currency(extract_monthly.commission_value, :unit => '', :separator => ",", :delimiter => ".") %></td>
+					  </tr> 
+					  <% @value_total += extract_monthly.commission_value  %>
+					<% end %>  
+			    <tr>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th>
+				    <th rowspan="2"></th> 
+					  <th colspan="2">Total: R$ <%=h number_to_currency(@value_total, :unit => '', :separator => ",", :delimiter => ".") %></th> 
+			    </tr>
+					
+			</table>
+			</table>  
+    </div>  	
+  </div>	
+</div>
